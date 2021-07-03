@@ -1,22 +1,30 @@
 <template>
   <td>
     <input type="checkbox" v-model="url.selected" />
-    <a :href="url.url">{{ url.title }}</a>
+    <a :href="url.url">
+
+      <span v-if="url.title">{{ url.title }} </span>
+      <span v-else>
+        {{url.url|host}}
+      </span>
+    </a>
   </td>
 </template>
 <script>
 import Axios from 'axios';
+
 export default {
   props: {
     url: {
       type: Object,
     },
   },
-  data: function () {
+  data() {
     return {};
   },
   mounted() {
     this.getPage().then();
+    console.log(this.url.url);
   },
   methods: {
     async getPage() {
@@ -26,8 +34,8 @@ export default {
       if (matches && matches.length > 0) {
         this.url.title = matches[1];
       }
-      console.log(this.url.title);
-      console.log(matches);
+      //console.log(this.url.title);
+      //console.log(matches);
 
       page.data.match(/favicon/);
     },

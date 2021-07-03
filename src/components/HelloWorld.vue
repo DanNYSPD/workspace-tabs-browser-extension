@@ -15,11 +15,11 @@
 
     <input type="text" class="form-control" v-model="workspaceName" />
     <div class="row">
-      <button class="btn btn-success" @click="createWorkSpaceWithSelectedUrl">
+      <button class="btn btn-success col-sm-6 col-md-4" @click="createWorkSpaceWithSelectedUrl">
         Create Workspace with selected tabs
       </button>
-      <button class="btn btn-info" @click="selectAll(true)">Select all</button>
-      <button class="btn btn-secundary" @click="selectAll(false)">
+      <button class="btn btn-info col-sm-6 col-md-4" @click="selectAll(true)">Select all</button>
+      <button class="btn btn-secundary col-sm-6 col-md-4" @click="selectAll(false)">
         Unselect all
       </button>
     </div>
