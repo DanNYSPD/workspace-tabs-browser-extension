@@ -50,7 +50,7 @@
         <a :href="v.url">{{v.url}}</a> -->
           <Url :url="v" />
           <td>
-            <b-button variant="danger"
+            <b-button variant="danger" size="sm"
             v-b-tooltip.hover title="close this tab"
             @click="closeTab(v)"
             >

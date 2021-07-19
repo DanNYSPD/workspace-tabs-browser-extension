@@ -15,11 +15,11 @@
 
 
           <td>
-            <b-button variant="danger" @click="remove(v)"
+            <b-button variant="danger" size="sm" @click="remove(v)"
               v-b-tooltip.hover title="Remove this from workspace">
               <font-awesome-icon icon="trash" />
             </b-button>
-            <b-button variant="info" @click="openHere(v)"
+            <b-button variant="info" size="sm" @click="openHere(v)"
               v-b-tooltip.hover title="open here">
               <font-awesome-icon icon="link" />
             </b-button>
@@ -46,7 +46,6 @@ export default {
   },
   mounted() {
     console.log('Mounted');
-    debugger;
     this.workspace = workspaceService.getWorkspaceDetail(this.workspaceName);
     if (!this.workspace) console.log(`Workspace not found ${this.workspaceName}`);
   },

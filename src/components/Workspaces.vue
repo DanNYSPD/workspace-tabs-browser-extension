@@ -1,41 +1,42 @@
 <template>
   <div class="row">
-    <div >
+    <div class="col-12">
 
-    <div>
+
       <b-card
        v-for="w in workspaces"
       :title="w.name" class="mb-2"
               header-bg-variant="primary"
 
       >
-
+   <div class="row">
 
         <b-card-text>
+
          {{w.description}}
           {{w.tabs.length}} pages
 
         </b-card-text>
 
-
-        <router-link class="btn btn-info" :to="{name:'workspace',params:{workspaceName:w.name}}"
+</div>
+        <router-link class="btn btn-info btn-sm" :to="{name:'workspace',params:{workspaceName:w.name}}"
         v-b-tooltip.hover title="Go to workspace(see url's saved)"
         >
               <font-awesome-icon icon="eye" />
 
         </router-link>
-        <button class="btn btn-primary" @click="openWorkspace(w)"
+        <button class="btn btn-primary btn-sm"  @click="openWorkspace(w)"
         v-b-tooltip.hover title="Open workspace (open tab in a new windows)"
         >
           <font-awesome-icon icon="folder-open" />
 
         </button>
-        <button class="btn btn-danger" @click="openWorkspace(w)">
+        <button class="btn btn-danger btn-sm" size="sm" @click="openWorkspace(w)">
            <font-awesome-icon icon="trash" />
         </button>
       </b-card>
     </div>
-    </div>
+
   </div>
 </template>
 <script>
