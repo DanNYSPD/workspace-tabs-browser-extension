@@ -1,37 +1,44 @@
 <template>
   <div>
 
-    <p>no</p>
 
 
 
-    <div class="form-group">
+
+    <!--
+      <p>no</p>
+      <div class="form-group">
       <label for="">Workspace:</label>
       <b-form-select
         v-model="selectedWorkspace"
         :options="workspaces"
       ></b-form-select>
-    </div>
+    </div> -->
 
     <h3>Tabs opened in current window</h3>
-    <input type="text" class="form-control" v-model="workspaceName" placeholder="Write here the workspace name" />
 
-    <div class="row">
-      <button class="btn btn-success col-sm-6 col-md-4" @click="createWorkSpaceWithSelectedUrl"
+<b-card>
+   <form class="form-inline">
+     <input type="text" class="form-control" v-model="workspaceName" placeholder="Write here the workspace name" />
+     <button class="btn btn-outline-success col-sm-6 col-md-3" @click="createWorkSpaceWithSelectedUrl"
         v-b-tooltip.hover title="Create Workspace with selected tabs">
-        <font-awesome-icon icon="save" />
+        Create <font-awesome-icon icon="save" />
 
       </button>
-      <button class="btn btn-warning col-sm-6 col-md-4" @click="createWorkSpaceWithSelectedUrl"
+       <button class="btn btn-outline-warning col-sm-6 col-md-3" @click="createWorkSpaceWithSelectedUrl"
         v-b-tooltip.hover title="Create Workspace with selected tabs and close">
         <font-awesome-icon icon="save" />
 
       </button>
-      <button class="btn btn-info col-sm-6 col-md-4" @click="selectAll(true)"
+       </form>
+      <div class="row">
+
+
+      <button class="btn btn-info col-sm-6 col-md-3" @click="selectAll(true)"
         v-b-tooltip.hover title="Select all">
         <font-awesome-icon icon="check-square" />
       </button>
-      <button class="btn btn-secundary col-sm-6 col-md-4" @click="selectAll(false)"
+      <button class="btn btn-info col-sm-6 col-md-3" @click="selectAll(false)"
         v-b-tooltip.hover title="Unselect all">
 
 
@@ -39,7 +46,7 @@
 
       </button>
     </div>
-  <b-card>
+
     <table class="table table-sm">
       <thead>
         <tr></tr>

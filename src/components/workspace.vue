@@ -1,6 +1,7 @@
 <template>
   <div>
      <router-link to="/">Go Back</router-link>
+     <b-card>
     <h3>You are in workspace: {{workspace.name}}</h3>
     <table class="table table-sm table-bordered">
       <thead>
@@ -28,6 +29,7 @@
         </tr>
       </tbody>
     </table>
+    </b-card>
   </div>
 </template>
 <script>
