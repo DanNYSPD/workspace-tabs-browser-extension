@@ -11,6 +11,7 @@
         <a :href="v.url">{{v.url}}</a> -->
           <Url :url="v" />
 
+
           <td>
             <b-button variant="danger" @click="remove(v)">
               <i class="fas fa-trash-alt"></i>

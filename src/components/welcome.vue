@@ -41,9 +41,11 @@
 
 <script>
 import workspaceService from '../core/Service';
+import Toastify from 'toastify-js'
+
 export default {
   components: {},
-  name: 'HelloWorld',
+  name: 'welcome',
   data() {
     return {
       datos: [],
@@ -88,16 +90,22 @@ export default {
       workspaceService
         .addWorkspaceName(this.workspaceName, selected)
         .then(async (workspaceName) => {
-          await this.$bvModal
-            .msgBoxOk(`Workspace ${workspaceName} was created successfully` , {
-              title: 'Confirmation',
-              size: 'sm',
-              buttonSize: 'sm',
-              okVariant: 'success',
-              headerClass: 'p-2 border-bottom-0',
-              footerClass: 'p-2 border-top-0',
-              centered: true,
-            })
+          // await this.$bvModal
+          //   .msgBoxOk(`Workspace ${workspaceName} was created successfully` , {
+          //     title: 'Confirmation',
+          //     size: 'sm',
+          //     buttonSize: 'sm',
+          //     okVariant: 'success',
+          //     headerClass: 'p-2 border-bottom-0',
+          //     footerClass: 'p-2 border-top-0',
+          //     centered: true,
+          //   })
+
+            Toastify({
+            text: `Workspace  ${workspaceName} created`,
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+            className: "info",
+            }).showToast();
         })
         .catch((error) => {
           debugger

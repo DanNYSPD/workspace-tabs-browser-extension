@@ -1,20 +1,20 @@
 <template>
   <div class="home">
     <Workspaces :workspaces="workspaces" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <welcome msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import welcome from '@/components/welcome.vue';
 import Workspaces from '@/components/Workspaces.vue';
 import getWorkspaces from '../core/Service';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    welcome,
     Workspaces,
   },
   data() {

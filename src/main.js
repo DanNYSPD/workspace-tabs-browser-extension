@@ -18,6 +18,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import "toastify-js/src/toastify.css"
+
 library.add(fas);
 
 Vue.use(BootstrapVue);
