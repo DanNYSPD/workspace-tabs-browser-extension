@@ -1,7 +1,9 @@
 <template>
   <td>
     <input type="checkbox" v-model="url.selected" />
-    <a :href="url.url">
+    <a :href="url.url"
+    v-b-tooltip.hover :title="url.url"
+    >
 
       <span v-if="url.title">{{ url.title }} </span>
       <span v-else>
