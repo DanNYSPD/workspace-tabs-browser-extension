@@ -1,5 +1,6 @@
 <template>
   <div>
+     <router-link to="/">Go Back</router-link>
     <h3>You are in workspace: {{workspace.name}}</h3>
     <table class="table table-sm table-bordered">
       <thead>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>{{ defaultText }}</p>
+
     <p>no</p>
 
-    <router-link to="/">Home</router-link>
+
 
     <div class="form-group">
       <label for="">Workspace:</label>
@@ -39,7 +39,7 @@
 
       </button>
     </div>
-
+  <b-card>
     <table class="table table-sm">
       <thead>
         <tr></tr>
@@ -60,6 +60,7 @@
         </tr>
       </tbody>
     </table>
+    </b-card>
     <div></div>
   </div>
 </template>

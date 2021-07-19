@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h3>{{defaultText}}</h3>
     <Workspaces :workspaces="workspaces" />
     <welcome msg="Welcome to Your Vue.js App" />
   </div>
@@ -21,6 +22,11 @@ export default {
     return {
       workspaces: [],
     };
+  },
+  computed: {
+    defaultText() {
+      return browser.i18n.getMessage('extName');
+    },
   },
   mounted() {
     console.log('mounted');
