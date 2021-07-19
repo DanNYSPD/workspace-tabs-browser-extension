@@ -9,15 +9,19 @@
         <tr v-for="v in workspace.tabs" :key="v">
           <!-- <input type="checkbox" v-model="v.selected">
         <a :href="v.url">{{v.url}}</a> -->
-          <Url :url="v" />
+          <Url :url="v"
+                @click="openHere(v)"
+           />
 
 
           <td>
             <b-button variant="danger" @click="remove(v)"
-        v-b-tooltip.hover title="Remove this from workspace">
-
-
+              v-b-tooltip.hover title="Remove this from workspace">
               <font-awesome-icon icon="trash" />
+            </b-button>
+            <b-button variant="info" @click="openHere(v)"
+              v-b-tooltip.hover title="open here">
+              <font-awesome-icon icon="link" />
             </b-button>
           </td>
         </tr>
@@ -50,6 +54,12 @@ export default {
     async remove(tab) {
       this.workspace = await workspaceService.removeFromWorkspace(this.workspaceName, tab);
     },
+    openHere(tab){
+      console.log(tab)
+      browser.tabs.create({
+        url:tab.url
+      })
+    }
   },
   watch: {
     workspaceName(newVal) {

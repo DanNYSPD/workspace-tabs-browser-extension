@@ -13,19 +13,24 @@
       ></b-form-select>
     </div>
 
-    <input type="text" class="form-control" v-model="workspaceName" />
+    <h3>Current tabs opened</h3>
+    <input type="text" class="form-control" v-model="workspaceName" placeholder="Write here the workspace name" />
+
     <div class="row">
       <button class="btn btn-success col-sm-6 col-md-4" @click="createWorkSpaceWithSelectedUrl"
         v-b-tooltip.hover title="Create Workspace with selected tabs">
         <font-awesome-icon icon="save" />
 
       </button>
+      <button class="btn btn-warning col-sm-6 col-md-4" @click="createWorkSpaceWithSelectedUrl"
+        v-b-tooltip.hover title="Create Workspace with selected tabs and close">
+        <font-awesome-icon icon="save" />
+
+      </button>
       <button class="btn btn-info col-sm-6 col-md-4" @click="selectAll(true)"
         v-b-tooltip.hover title="Select all">
         <font-awesome-icon icon="check-square" />
-
-
-      >Select all</button>
+      </button>
       <button class="btn btn-secundary col-sm-6 col-md-4" @click="selectAll(false)"
         v-b-tooltip.hover title="Unselect all">
 
@@ -34,6 +39,7 @@
 
       </button>
     </div>
+
     <table class="table table-sm">
       <thead>
         <tr></tr>
@@ -43,6 +49,14 @@
           <!-- <input type="checkbox" v-model="v.selected">
         <a :href="v.url">{{v.url}}</a> -->
           <Url :url="v" />
+          <td>
+            <b-button variant="danger"
+            v-b-tooltip.hover title="close this tab"
+            @click="closeTab(v)"
+            >
+            <font-awesome-icon icon="window-close" />
+            </b-button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -88,6 +102,7 @@ export default {
             url: tab.url,
             selected: false,
             title: '',
+            id:tab.id,
           });
         });
     },
@@ -146,6 +161,15 @@ export default {
         },
       ];
     },
+    closeTab(tab){
+      let removing=browser.tabs.remove(
+          tab.id
+        )
+
+        removing.then(()=>{
+             this.datos= this.datos.filter(x=>x.id!=tab.id)
+        });
+    }
   },
 };
 </script>

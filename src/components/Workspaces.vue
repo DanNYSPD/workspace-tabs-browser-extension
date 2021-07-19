@@ -18,7 +18,7 @@
         </b-card-text>
 
 
-        <router-link class="btn btn-primary" :to="{name:'workspace',params:{workspaceName:w.name}}"
+        <router-link class="btn btn-info" :to="{name:'workspace',params:{workspaceName:w.name}}"
         v-b-tooltip.hover title="Go to workspace(see url's saved)"
         >
               <font-awesome-icon icon="eye" />
