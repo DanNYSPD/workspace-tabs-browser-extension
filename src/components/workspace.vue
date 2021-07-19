@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>workspace:</h2>
+    <h2>workspace: {{workspace.name}}</h2>
     <table class="table table-sm table-bordered">
       <thead>
         <tr></tr>
@@ -13,8 +13,11 @@
 
 
           <td>
-            <b-button variant="danger" @click="remove(v)">
-              <i class="fas fa-trash-alt"></i>
+            <b-button variant="danger" @click="remove(v)"
+        v-b-tooltip.hover title="Remove this from workspace">
+
+
+              <font-awesome-icon icon="trash" />
             </b-button>
           </td>
         </tr>

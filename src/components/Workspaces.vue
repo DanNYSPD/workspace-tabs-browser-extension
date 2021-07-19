@@ -9,18 +9,29 @@
               header-bg-variant="primary"
 
       >
+
+
         <b-card-text>
          {{w.description}}
           {{w.tabs.length}} pages
+
         </b-card-text>
 
 
-        <router-link class="btn btn-primary" :to="{name:'workspace',params:{workspaceName:w.name}}" >See pages </router-link>
-        <button class="btn btn-primary" @click="openWorkspace(w)">Open workspace</button>
-        <button class="btn btn-danger" @click="openWorkspace(w)">Delete
+        <router-link class="btn btn-primary" :to="{name:'workspace',params:{workspaceName:w.name}}"
+        v-b-tooltip.hover title="Go to workspace(see url's saved)"
+        >
+              <font-awesome-icon icon="eye" />
 
+        </router-link>
+        <button class="btn btn-primary" @click="openWorkspace(w)"
+        v-b-tooltip.hover title="Open workspace (open tab in a new windows)"
+        >
+          <font-awesome-icon icon="folder-open" />
 
-          <i class="fas fa-question-circle"></i>
+        </button>
+        <button class="btn btn-danger" @click="openWorkspace(w)">
+           <font-awesome-icon icon="trash" />
         </button>
       </b-card>
     </div>
