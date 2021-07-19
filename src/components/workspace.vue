@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>workspace: {{workspace.name}}</h2>
+    <h3>You are in workspace: {{workspace.name}}</h3>
     <table class="table table-sm table-bordered">
       <thead>
         <tr></tr>

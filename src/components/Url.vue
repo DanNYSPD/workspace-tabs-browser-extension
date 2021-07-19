@@ -1,7 +1,9 @@
 <template>
-  <td>
-    <input type="checkbox" v-model="url.selected" />
+  <td class="text-left m-0 p-0" >
+   <div class="float-start">
+      <input  class="float-start" type="checkbox" v-model="url.selected" />
     <a :href="url.url"
+
     v-b-tooltip.hover :title="url.url"
     >
 
@@ -10,6 +12,7 @@
         {{url.url|host}}
       </span>
     </a>
+   </div>
   </td>
 </template>
 <script>

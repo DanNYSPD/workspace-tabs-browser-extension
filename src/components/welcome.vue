@@ -13,7 +13,7 @@
       ></b-form-select>
     </div>
 
-    <h3>Current tabs opened</h3>
+    <h3>Tabs opened in current window</h3>
     <input type="text" class="form-control" v-model="workspaceName" placeholder="Write here the workspace name" />
 
     <div class="row">
